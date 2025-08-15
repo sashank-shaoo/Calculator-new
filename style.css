@@ -85,7 +85,7 @@ body {
   color: transparent;
 }
 /* Optional: adjust for very small screens */
-@media (max-width: 400px) {
+@media (max-width: 300px) {
   .calc-btn {
     height: 3rem;
     font-size: small;
