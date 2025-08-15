@@ -87,14 +87,14 @@ body {
 @media (max-width: 600px) {
   .main-div {
     width: 95%;
-    padding: 10px;
+    padding: 15px;
   }
   .calc-btn {
     flex: 1 1 22%;
     max-width: 3.2rem;
     height: 3.2rem;
     font-size: medium;
-    margin: 0.4rem;
+    margin: 1rem;
   }
   .first-el-2-p {
     font-size: x-large;
