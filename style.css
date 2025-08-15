@@ -65,13 +65,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-/* 📱 Mobile + Desktop view adjustments */
+
+/* ✅ 4 buttons per row for ALL screens */
 .calc-btn {
-  flex: 0 0 calc(25% - 0.8rem); /* 4 buttons per row */
-  max-width: calc(25% - 0.8rem);
-  height: 3.5rem;
+  flex: 0 0 25%;       /* each button takes 25% width */
+  max-width: 25%;
+  aspect-ratio: 1 / 1; /* keep square shape */
   font-size: medium;
-  margin: 0.4rem;
+  margin: 0.2rem;
   border-radius: 10px;
   box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
   color: orange;
@@ -80,35 +81,17 @@ body {
 
 .madeby {
   background: linear-gradient(to left, #f97316, #22c55e, #3b82f6);
-  -webkit-background-clip: text; /* for Chrome/Safari */
+  -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-/* Optional: adjust for very small screens */
+
+/* 📱 Smallest devices adjustments (optional) */
 @media (max-width: 300px) {
   .calc-btn {
-    height: 3rem;
     font-size: small;
   }
-}
-
-/* 📱 Mobile view adjustments */
-@media (max-width: 600px) {
-  .main-div {
-    width: 95%;
-    padding: 15px;
-  }
-  .calc-btn {
-    flex: 1 1 22%;
-    max-width: 3.2rem;
-    height: 3.2rem;
-    font-size: medium;
-    margin: 6rem;
-  }
   .first-el-2-p {
-    font-size: x-large;
-  }
-  h1 {
-    font-size: 1.5rem;
+    font-size: large;
   }
 }
