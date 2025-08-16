@@ -15,9 +15,9 @@ const totalValue = calcNumBtn.forEach((btn) => {
 });
 
 clearBtn.addEventListener("click", () => {
-  string = string.slice(0,-1) || "";
+  string = string.slice(0, -1) || "";
   output.innerHTML = string || "0";
-})
+});
 
 acBtn.addEventListener("click", (e) => {
   string = "";
@@ -32,5 +32,35 @@ equal.addEventListener("click", () => {
     string = result.toString();
   } catch (err) {
     output.innerHTML = "Error";
+  }
+});
+
+window.addEventListener("keydown", (e) => {
+  let key = e.key;
+
+  if (!isNaN(key) || ["+", "-", "*", "/", "%", "."].includes(key)) {
+    string += key;
+    output.innerHTML = string;
+  }
+
+  if (key === "Enter" || key === "=") {
+    try {
+      let expression = string.replace(/%/g, "/100*");
+      let result = eval(expression);
+      output.innerHTML = result;
+      string = result.toString();
+    } catch (err) {
+      output.innerHTML = "Error";
+    }
+  }
+
+  if (key === "Backspace") {
+    string = string.slice(0, -1) || "";
+    output.innerHTML = string || "0";
+  }
+
+  if (key === "Escape") {
+    string = "";
+    output.innerHTML = "0";
   }
 });
